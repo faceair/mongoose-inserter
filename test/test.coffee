@@ -22,5 +22,4 @@ mongoose.connect "mongodb://localhost:27017/test", (err)->
       inserter.insert AccountModel, [
           app_id: "app",
           create_at: new Date()
-        ], (err)->
-          throw err if err
+        ]
