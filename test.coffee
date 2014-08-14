@@ -1,6 +1,6 @@
 mongoose = require "mongoose"
 ObjectId = require("mongoose").Types.ObjectId
-inserter = require '../index'
+inserter = require './index'
 
 AppSchema = new mongoose.Schema
   app_id:

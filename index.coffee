@@ -6,8 +6,11 @@ exports.reset = (Model, docArr, cb)->
     cb = docArr
     docArr = []
   else
-    unless _.isArray docArr
-      docArr = [ docArr ]
+    if docArr
+      unless _.isArray docArr
+        docArr = [ docArr ]
+    else
+      docArr = []
 
   Model.remove (err)->
     cb err if err
@@ -23,8 +26,11 @@ exports.insert = (Model, docArr, cb)->
     cb = docArr
     docArr = []
   else
-    unless _.isArray docArr
-      docArr = [ docArr ]
+    if docArr
+      unless _.isArray docArr
+        docArr = [ docArr ]
+    else
+      docArr = []
 
   async.each docArr, (doc, callback)->
     new Model(doc).save (err)->
