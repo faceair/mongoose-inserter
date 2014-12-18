@@ -19,7 +19,7 @@ exports.reset = (Model, docArr, cb)->
         return cb err if err and cb
         callback()
     , ->
-      return cb false if cb
+      return cb() if cb
 
 exports.insert = (Model, docArr, cb)->
   if _.isFunction docArr
@@ -37,4 +37,4 @@ exports.insert = (Model, docArr, cb)->
       return cb err if err and cb
       callback()
   , ->
-    return cb false if cb
+    return cb() if cb
